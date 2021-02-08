@@ -11,7 +11,7 @@ function App() {
       </header>
       <div
         style={{
-          background: "hsl(53,81%,45%)",
+          background: "var(--main-gold)",
           height: "0.25rem",
           width: "5rem",
           margin: "1rem auto 0.25rem",
@@ -54,31 +54,45 @@ function App() {
       </section>
       <section className="section menu">
         <div className="container">
-          <div className="columns is-multiline">
+          <div className="columns is-multiline is-centered">
             {items.map((item) => {
               return (
-                <div key={item.id} className="column is-6-desktop">
-                  <div className={"columns"}>
-                    <div className="food-pics column is-4">
+                <div
+                  key={item.id}
+                  className={"column is-6-desktop is-9-tablet"}
+                >
+                  <div className={"columns is-multiline"}>
+                    <div className="food-pics column is-4 is-12-mobile has-text-centered">
                       <img
                         className={"food-img"}
                         src={item.img}
                         alt="menu item"
                       />
                     </div>
-                    <div className="food-info column">
-                      <div className="food-price columns">
+                    <div
+                      className="food-info column is-9-mobile"
+                      style={{ margin: "0 auto 0" }}
+                    >
+                      <div className="food-price columns is-mobile has-text-centered-mobile mb-0">
                         <h3
                           className={
-                            "is-uppercase has-text-weight-bold column is-10"
+                            "is-uppercase has-text-weight-bold column is-10-tablet is-10-mobile has-text-left"
                           }
-                          style={{ letterSpacing: "2px" }}
+                          style={{
+                            letterSpacing: "2px",
+                            textDecoration: "underline",
+                          }}
                         >
                           {item.title}
                         </h3>
-                        <h3 className={"column"}>{item.price}</h3>
+                        <h3
+                          className={
+                            "price has-text-weight-bold column is-2-mobile has-text-right"
+                          }
+                        >
+                          ${item.price}
+                        </h3>
                       </div>
-
                       <p>{item.desc}</p>
                     </div>
                   </div>
