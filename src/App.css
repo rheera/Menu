@@ -1,0 +1,7 @@
+.food-img {
+    object-fit: cover;
+    width: 256px;
+    height: 128px;
+    border-color: hsl(53,81%,45%);
+    border-style: solid;
+}

@@ -54,25 +54,37 @@ function App() {
       </section>
       <section className="section menu">
         <div className="container">
-          <div className="columns is-vcentered is-multiline">
-            <div className="column is-6-desktop">
-              {items.map((item) => {
-                return (
-                  <div key={item.id} className="container">
-                    <div className="food-img">
-                      <figure className="image is-128x128">
-                        <img src={item.img} alt="menu item" />
-                      </figure>
+          <div className="columns is-multiline">
+            {items.map((item) => {
+              return (
+                <div key={item.id} className="column is-6-desktop">
+                  <div className={"columns"}>
+                    <div className="food-pics column is-4">
+                      <img
+                        className={"food-img"}
+                        src={item.img}
+                        alt="menu item"
+                      />
                     </div>
-                    <div className="food-info">
-                      <h3>{item.title}</h3>
-                      <h3>{item.price}</h3>
+                    <div className="food-info column">
+                      <div className="food-price columns">
+                        <h3
+                          className={
+                            "is-uppercase has-text-weight-bold column is-10"
+                          }
+                          style={{ letterSpacing: "2px" }}
+                        >
+                          {item.title}
+                        </h3>
+                        <h3 className={"column"}>{item.price}</h3>
+                      </div>
+
                       <p>{item.desc}</p>
                     </div>
                   </div>
-                );
-              })}
-            </div>
+                </div>
+              );
+            })}
           </div>
         </div>
       </section>
